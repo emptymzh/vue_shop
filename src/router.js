@@ -8,7 +8,7 @@ Vue.use(Router)
 
 const router = new Router({
   //解决vue ui的热更新问题
-  mode:'history',
+
   routes: [
     { path:'/',redirect:'/login'},
     { path: '/login', component: Login },
