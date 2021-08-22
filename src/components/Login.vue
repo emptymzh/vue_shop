@@ -6,7 +6,7 @@
               <img src="../assets/logo.png" alt="">
           </div>
           <!-- 登录表单区 -->
-          <!-- :model不是双向绑定只有bind的作用，父向子传值 -->
+          <!-- :model不是双向绑定只有bind的作用，父向子传值,这里没有用props传值达到父向子传值的目的-->
           <!-- ref后的loginFormRef就是这个表单组件(el-form)的引用对象，就能使用其相关方法 -->
           <el-form ref="loginFormRef" :model="loginForm" :rules="loginFormRules" label-width="0px" class="login_form">
                 <el-form-item prop="username" >
@@ -31,7 +31,7 @@ export default {
         return{
             // 这是表单的数据绑定对象
             loginForm:{
-                username:'admin77',
+                username:'admin',
                 password:'123456'
             },
             //这是表单的验证规则对象
