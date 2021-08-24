@@ -8,7 +8,7 @@ import { Menu, Submenu, MenuItemGroup, MenuItem } from 'element-ui'
 import { Breadcrumb, BreadcrumbItem, Card, Row, Col, Table, TableColumn, Switch, Tooltip, Pagination } from 'element-ui'
 import { Dialog } from 'element-ui'
 import { MessageBox } from 'element-ui';
-import { Tag,Tree,Select,Option} from 'element-ui'
+import { Tag,Tree,Select,Option,Cascader} from 'element-ui'
 // 导入弹框提示组件    element-ui里面的都可以合并到 一个{}
 import { Message } from 'element-ui'
 //Vue的插件(组件)是一个对象,
@@ -42,6 +42,7 @@ Vue.use(Tag)
 Vue.use(Tree)
 Vue.use(Select)
 Vue.use(Option)
+Vue.use(Cascader)
 //一般插件会用USE导入 公共方法用prototype
 //Message需要全局挂载  $message是自己的一个自定义属性
 //每一个vue组件都是Vue的实例，所以组件内this可以拿到Vue.prototype上添加的属性和方法。
