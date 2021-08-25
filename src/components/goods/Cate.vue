@@ -199,7 +199,7 @@ export default {
     addCate(){
         this.$refs.addFormRef.validate(async valid=>{
             if(!valid) return
-          const {data:res}=await this.$http.post(`categories`,this.addForm)
+          const {data:res}=await this.$http.post(`categories`,this.addForm5)
           if(res.meta.status!==201) return this.$message.error('添加分类失败')
           this.$message.success('添加分类成功')
           this.getCateList()
