@@ -21,3 +21,7 @@ html,body,#app{
 .el-cascader-panel{
     height: 300px;
 }
+/* 富编辑器的高度设置 */
+.ql-editor{
+    min-height: 300px;
+}

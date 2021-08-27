@@ -4,6 +4,12 @@ import router from './router'
 import './assets/css/global.css'
 import './plugins/element.js'
 import TreeTable from 'vue-table-with-tree-grid'
+//导入富文本编辑器
+import VueQuillEditor from 'vue-quill-editor'
+//导入富文本编辑器相关样式
+import 'quill/dist/quill.core.css' // import styles
+import 'quill/dist/quill.snow.css' // for snow theme
+import 'quill/dist/quill.bubble.css' // for bubble theme
 /* 导入字体图标 */
 // import './assets/fonts/iconfont.css'
 
@@ -22,8 +28,22 @@ Vue.prototype.$http = axios
 
 Vue.config.productionTip = false
 
+//全局的
+Vue.filter('dateFormat', function (originVal) {
+  const dt = new Date(originVal)
+  const y = dt.getFullYear()
+  const m = (dt.getMonth() + 1 + '').padStart(2, '0') /* 转为字符串再调用此函数，第一个表示总长多少位，不足就用第二个参数 */
+  const d = (dt.getDate()+'').padStart(2, '0')
+  const hh = (dt.getHours() + '').padStart(2, '0')
+  const mm = (dt.getMinutes() + '').padStart(2, '0')
+  const ss = (dt.getSeconds() + '').padStart(2, '0')
+  return `${y}-${m}-${d} ${hh}:${mm}:${ss}`
+})
+
 //注册为全局可用的组件 用Vue.use也行,是自动注册
-Vue.component('tree-table',TreeTable)
+Vue.component('tree-table', TreeTable)
+//将富文本编辑器注册为全局可用的组件
+Vue.use(VueQuillEditor)
 new Vue({
   router,
   render: h => h(App)
