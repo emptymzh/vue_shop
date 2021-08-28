@@ -1,17 +1,26 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Login from './components/Login.vue'
-import Home from './components/Home.vue'
-import Welcome from './components/Welcome.vue'
-import Users from './components/user/Users.vue'
-import Rights from './components/power/Rights.vue'
-import Roles from './components/power/Roles.vue'
-import Cate from './components/goods/Cate.vue'
-import Params from './components/goods/Params.vue'
-import List from './components/goods/List.vue'
-import Add from './components/goods/Add.vue'
-import Order from './components/oreder/Order.vue'
-import Report from './components/report/Report.vue'
+// import Login from './components/Login.vue'
+// import Home from './components/Home.vue'
+// import Welcome from './components/Welcome.vue'
+//这里使用了路由懒加载 使得login home welcom组件放到了一个文件夹打包，当路由被访问的时候才加载对应组件
+const Login = () => import(/* webpackChunkName: "login_home_Welcome" */ './components/Login.vue')
+const Home = () => import(/* webpackChunkName: "login_home_Welcome" */ './components/Home.vue')
+const Welcome = () => import(/* webpackChunkName: "login_home_Welcome" */ './components/Welcome.vue')
+
+const  Users= () => import(/* webpackChunkName: "users_rights_roles" */ './components/user/Users.vue')
+const  Rights= () => import(/* webpackChunkName: "users_rights_roles" */ './components/power/Rights.vue')
+const  Roles= () => import(/* webpackChunkName: "users_rights_roles" */ './components/power/Roles.vue')
+
+const  Cate= () => import(/* webpackChunkName: "cate_params" */ './components/goods/Cate.vue')
+const  Params= () => import(/* webpackChunkName: "cate_params" */ './components/goods/Params.vue')
+
+const  List= () => import(/* webpackChunkName: "list_add" */ './components/goods/List.vue')
+const  Add= () => import(/* webpackChunkName: "list_add" */ './components/goods/Add.vue')
+
+const  Order= () => import(/* webpackChunkName: "order_report" */ './components/oreder/Order.vue')
+const  Report= () => import(/* webpackChunkName: "order_report" */ './components/report/Report.vue')
+
 Vue.use(Router)
 
 const router = new Router({

@@ -11,7 +11,7 @@ import 'quill/dist/quill.core.css' // import styles
 import 'quill/dist/quill.snow.css' // for snow theme
 import 'quill/dist/quill.bubble.css' // for bubble theme
 /* 导入字体图标 */
-// import './assets/fonts/iconfont.css' 直接加载网络上的资源
+// import './assets/fonts/iconfont.css'
 
 //导入网页加载时的进度条效果的Js和css
 import NProgress from 'nprogress'

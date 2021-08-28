@@ -2,20 +2,21 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import './assets/css/global.css'
-import './plugins/element.js'
+// import './plugins/element.js'  使用CDN优化了 文件放到了index里面
 import TreeTable from 'vue-table-with-tree-grid'
 //导入富文本编辑器
 import VueQuillEditor from 'vue-quill-editor'
-//导入富文本编辑器相关样式
-import 'quill/dist/quill.core.css' // import styles
-import 'quill/dist/quill.snow.css' // for snow theme
-import 'quill/dist/quill.bubble.css' // for bubble theme
+//导入富文本编辑器相关样式  相关样式放到index中缩小文件体积
+// import 'quill/dist/quill.core.css' // import styles
+// import 'quill/dist/quill.snow.css' // for snow theme
+// import 'quill/dist/quill.bubble.css' // for bubble theme
 /* 导入字体图标 */
-// import './assets/fonts/iconfont.css' 直接加载网络上的资源
+// import './assets/fonts/iconfont.css'
 
 //导入网页加载时的进度条效果的Js和css
 import NProgress from 'nprogress'
-import 'nprogress/nprogress.css'
+//样式放到了index.html中
+// import 'nprogress/nprogress.css'  
 
 import axios from 'axios'
 //配置请求的根路径 
